@@ -1,0 +1,441 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: "fira-sans";
+	font-weight: 200;
+	font-size: 15pt;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 0.6px;
+	color: #b4b6b6;
+	background-color: #373638;
+}
+
+/*
+light grey: #29292a;
+dark grey: #212121;
+text grey: #b4b6b6;
+text lightgrey: #959696;
+*/
+
+#centerBox {
+	width: 350px;
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background-color: #29292a;
+	z-index: 1;
+}
+
+#container {
+	width: 350px;
+	position: relative;
+	margin: 0 auto;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background-color: #373638;
+	padding: 2px 2px 2px 2px;
+	z-index: 2;
+	display: inline-block;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color: #29292a;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	overflow: hidden;
+}
+
+.container.dark {
+	background-color: #232323;
+}
+
+.small {
+	font-size: 11.5pt;
+	color: #808080;
+}
+
+.content {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	transition: top 1.2s, transform 1.2s, opacity 1.2s;
+}
+
+#timeCont {
+	height: 130px;
+}
+
+#time {
+	font-size: 0;
+	font-weight: 100;
+	height: 100%;
+	transform: translate(-49%, -50%);
+}
+
+.digitCont {
+	font-size: 68pt;
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	width: 48px;
+	margin: 0 -2px;
+}
+
+.colon {
+	width: 20px;
+	font-size: 68pt;
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	margin: 0 -2px;
+}
+
+#ampmCont {
+	display: inline-block;
+	width: 35px;
+	height: 25px;
+	position: relative;
+	bottom: 29px;
+	left: 8px;
+	font-size: 20pt;
+	font-weight: 200;
+	overflow: hidden;
+}
+
+#sunrise, #sunset, #cloudiness, #humidity {
+	display: inline-block;
+	padding: 0 18px;
+	height: 20px;
+}
+
+/*
+.srTimeCont, .percentCont {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 100%;
+	vertical-align: top;
+}
+
+.srTime, .ssTime, .cldPercent, .humPercent {
+	width: 100%;
+}
+*/
+
+.date, .city {
+	color: #808080;
+	font-size: 0.9em;
+	width: 90%;
+}
+
+#windInfo {
+	height: 20px;
+}
+
+#arrowCont {
+	height: 18px;
+	margin-left: 10px;
+	margin-right: 7px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#arrowCont img {
+	height: 100%;
+	transition: 1s transform;
+	/*transform: rotate(90deg);*/
+}
+
+.srTimeCont, .percentCont, #windSpeedCont {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 25px;
+	vertical-align: middle;
+}
+
+.srTimeCont, .percentCont {
+	width: 30px;
+}
+
+#weatherCont {
+	height: 75px;
+	background-color: #373638;
+}
+
+#outlookCont, #tempCont {
+	height: 100%;
+	vertical-align: top;
+	margin: 0;
+}
+
+#outlookCont {
+	width: 65.9%;
+	display: inline-block;
+	float: left;
+}
+
+#outlook {
+	height: 100%;
+	font-size: 0;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#weatherIconCont {
+	font-size: 15pt;
+	width: 20%;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+#forecastCont {
+	font-size: 15pt;
+	width: 80%;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	width: 60%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 1.05em;
+}
+
+#tempCont {
+	display: inline-block;
+	width: 33%;
+	float: right;
+}
+
+.temp {
+	font-size: 1.3em;
+	font-weight: 300;
+	cursor: pointer;
+}
+
+.temp span {
+	display: inline-block;
+	transform: rotate(90deg);
+	position: relative;
+	left: 4px;
+}
+
+.tempColdest {
+	color: #3a7cae;
+}
+
+.tempColder {
+	color: #3aa9ae;
+}
+
+.tempCold {
+	color: #80a9ae;
+}
+
+.tempNeutral {
+	color: #afb1ae;
+}
+
+.tempWarm {
+	color: #bdb46b;
+}
+
+.tempWarmer {
+	color: #d4aa19;
+}
+
+.tempWarmest {
+	color: #dc7d19;
+}
+
+#searchCont {
+	overflow: visible;
+	height: auto;
+	transition: height 1.2s;
+}
+
+#search {
+	display: inline-block;
+	height: 30px;
+	width: 80%;
+	margin: 8px 0;
+	color: #ffffff;
+	background-color: #313131;
+	border-radius: 15px;
+	position: relative;
+	vertical-align: middle;
+	box-shadow: 1px 1px 3px 1px #181818 inset;
+}
+
+.verticalCenter {
+	position: relative;
+	margin: 0 auto;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+#searchInput {
+	width: 85%;
+	position: relative;
+	top: 2px;
+	left: 15px;
+	color: #ffffff;
+	background-color: rgba(0,0,0,0);
+	border: none;
+	border-bottom: #373638;
+	font-size: 20px;
+}
+
+input:focus {
+	outline: none;
+}
+
+input::selection {
+	background-color: black;
+}
+
+#submitButton {
+	display: inline;
+	right: 2px;
+	height: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+#gpsButton {
+	display: inline;
+	margin-left: 8px;
+	height: 22px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+#searchList {
+	text-transform: initial;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #313131;
+	width: 90%;
+	margin: 0 auto;
+	font-size: 0.7em;
+	color: #959696;
+	display: none;
+	overflow: scroll;
+	max-height: 200px;
+	z-index: 10;
+}
+
+#searchList a {
+	display: inline-block;
+	width: 100%;
+	text-decoration: none;
+	border-bottom: 2px solid #29292a;
+	color: #959696;
+	padding: 8px 0;
+}
+
+#searchList a:hover {
+	background-color: #212121;
+}
+
+#searchList a:focus {
+	background-color: #212121;
+	outline: none;
+}
+
+#searchList li:last-child {
+	border-bottom: none;
+}
+
+#errors {
+	text-transform: none;
+	font-size: 0.7em;
+	color: #cf4a00;
+	margin: 0 auto;
+	padding-bottom: 8px;
+	width: 85%;
+	display: none;
+}
+
+#moreInfoButton {
+	font-size: 11pt;
+	position: absolute;
+	color: #606060;
+	left: 50%;
+	bottom: -25px;
+	transform: translateX(-50%);
+	cursor: pointer;
+}
+
+#moreInfoButton span {
+	display: inline-block;
+	transform: rotate(90deg);
+	margin: 0 5px;
+	color: #151515;
+	font-size: 18pt;
+	position: relative;
+	right: 2px;
+	top: 4px;
+}
+
+#moreInfoButton .open {
+	transform: rotate(-90deg);
+}
+
+.moreInfo {
+	height: 35px;
+	transition: 0.5s height;
+}
+
+.collapsed {
+	height: 0;
+	margin-top: -2px;
+	margin-bottom: -2px;
+}
+
+@media screen and (max-width: 475px) {
+
+	#centerBox {
+		width: 100%;
+	}
+
+	#container {
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-height: 735px) {
+
+	#container {
+		top: 10%;
+		-webkit-transform: translateY(0%);
+		-ms-transform: translateY(0%);
+		transform: translateY(0%);
+	}
+
+}
+

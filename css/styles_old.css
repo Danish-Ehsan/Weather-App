@@ -1,0 +1,99 @@
+html, body {
+	width: 100%;
+	font-family: "fira-sans";
+	font-weight: 100;
+	font-size: 24px;
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+	color: #ffffff;
+	background-color: #373638;
+}
+
+#container {
+	width: 20%;
+	min-width: 300px;
+	max-width: 800px;
+	margin: 200px auto;
+	border-bottom: 1px solid #ffffff;
+}
+
+.content {
+	padding: 15px 0;
+	border-top: 1px solid #ffffff;
+	width: 100%;
+}
+
+#time {
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
+	font-size: 450%;
+}
+
+#outlook {
+	display: inline-block;
+	width: 50%;
+}
+
+#weatherIcon {
+	display: block;
+}
+
+#temp {
+	display: inline-block;
+	width: 48%;
+	float: right;
+	text-align: right;
+	font-size: 225%;
+	vertical-align: middle;
+	margin-top: 7px;
+}
+
+#city {
+	padding-bottom: 7px;
+}
+
+#search {
+	display: inline-block;
+	width: 90%;
+	color: #ffffff;
+	background-color: #252525;
+	border-radius: 15px;
+	margin-top: 7px;
+	position: relative;
+}
+
+#searchInput {
+	width: 85%;
+	position: relative;
+	bottom: 2px;
+	left: 3px;
+	color: #ffffff;
+	background-color: #252525;
+	border: none;
+	border-bottom: #373638;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+input:focus {
+	outline: none;
+}
+
+#submitButton {
+	display: inline;
+	position: absolute;
+	right: 10px;
+	top: 3px;
+	height: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+#gpsButton {
+	display: inline;
+	margin-left: 8px;
+	height: 22px;
+	cursor: pointer;
+}

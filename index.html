@@ -1,0 +1,99 @@
+<!Doctype html>
+<html>
+
+<head>
+	<title>Weather App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/resets.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" href="https://use.typekit.net/slt6kzn.css">
+
+	<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4GfWG44DvPY3RWl3omZnLGk9aVU7On4U&libraries=places"></script>
+</head>
+
+<body>
+	<div id="centerBox"></div>
+	<div id="container">
+		<div id="timeCont" class="container dark">
+			<div id="time" class="content">
+				<span class="digitCont"><div class="digit content"> </div></span>
+				<span class="digitCont"><div class="digit content"> </div></span>
+				<span class="colon"><div class="content">:</div></span>
+				<span class="digitCont"><div class="digit content"> </div></span>
+				<span class="digitCont"><div class="digit content"> </div></span>
+				<div id="ampmCont"><div class="ampm content"> </div></div>
+			</div>
+		</div>
+		<div id="sunsetCont" class="container dark moreInfo collapsed">
+			<div id="sunrise" class="verticalCenter small">sunrise:
+				<div class="srTimeCont verticalCenter">
+					<div class="content srTime">7:32</div>
+				</div>
+			</div>
+
+			<div id="sunset" class="verticalCenter small">sunset:
+				<div class="srTimeCont verticalCenter">
+					<div class="content ssTime">5:28</div>
+				</div>
+			</div>
+		</div>
+		<div id="dateCont" class="container">
+			<div class="content date"> </div> <!--need space to create empty text node for animation-->
+		</div>
+		<div id="windCont" class="container dark moreInfo collapsed">
+			<div id="windInfo" class="verticalCenter small">wind:
+				<div id="arrowCont" class="verticalCenter"><img src="images/arrow.png" id="arrow"></div>
+				<div id="windSpeedCont" class="verticalCenter"><div class="content windSpeed">16 MPH</div></div>
+			</div>
+		</div>
+		<div id="weatherCont" class="container">
+			<div id="outlookCont" class="container dark">
+				<div id="outlook">
+					<div id="weatherIconCont">
+						<img src="" class="content weatherIcon">
+					</div>
+					<div id="forecastCont">
+						<div class="content forecast"> </div> 
+					</div>
+				</div>
+			</div>
+			<div id="tempCont" class="container dark">
+				<div class="content temp"> </div>
+			</div>
+		</div>
+		<div id="cloudHumCont" class="container dark moreInfo collapsed">
+			<div id="cloudiness" class="verticalCenter small">cloudiness:
+				<div class="percentCont verticalCenter">
+					<div class="content cldPercent">78%</div>
+				</div>
+			</div>
+
+			<div id="humidity" class="verticalCenter small">humidity:
+				<div class="percentCont verticalCenter">
+					<div class="content humPercent">54%</div>
+				</div>
+			</div>
+		</div>
+		<div id="cityCont" class="container">
+			<div class="content city"> </div>
+		</div>
+		<div id="searchCont" class="container dark">
+			<div id="search">
+				<input type="text" name="citySearch" placeholder="Search City" id="searchInput"><input type="image" src="images/Submit.png" alt="Submit" id="submitButton" class="verticalCenter">
+				<ul id="searchList">
+				</ul>
+			</div>
+			<img src="images/gps.png" id="gpsButton" alt="gps button">
+			<div id="errors"></div>
+		</div>
+		<div id="moreInfoButton"><span>&#8227;</span>show more info<span>&#8227;</span></div>
+	</div>
+<script type="text/javascript" src="js/Update_Weather.js"></script>
+<script type="text/javascript" src="js/search_city.js"></script>
+<script type="text/javascript" src="js/clock.js"></script>
+</body>
+
+</html>
