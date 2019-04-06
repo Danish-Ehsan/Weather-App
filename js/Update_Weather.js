@@ -64,7 +64,7 @@
 		xhr.onload = function() {
 			if(xhr.status === 200) {
 				var responseString = xhr.responseText;
-				responseObject = JSON.parse(responseString);
+				var responseObject = JSON.parse(responseString);
 
 				var cityName = responseObject.name + ', ' + responseObject.sys.country;
 				var outlook = responseObject.weather[0].description;
@@ -92,6 +92,7 @@
 				animate(weatherIcon, imageLink);
 				celsiusMode ? animate(temp, celsius) : animate(temp, fahrenheit);
 				location ? animate(city, location) : animate(city, cityName);
+
 
 				//moreInfo
 				if (moreInfoExtended) {

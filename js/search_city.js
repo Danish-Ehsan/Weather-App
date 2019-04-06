@@ -138,23 +138,31 @@
 			if (results.length) {
 				results = results[0];
 			}
-			//console.log(results);
-			//console.log('results length = ' + results.length);
-			//console.log('formatted address = ' + results.formatted_address);
-			//console.log(results.geometry.location.lat());
 
 			lat = results.geometry.location.lat();
 			lng = results.geometry.location.lng();
 			placeId = results.place_id;
+			//location = results.formatted_address;
+			
+			/*Regular search results format the address improperly
+			therefor unless details search is used the location 
+			needs to be formatted as such*/
 
-			/*Search results no longer includes the city name in the 'formatted_address' while details search dles
-			Only details search results include 'address_components' therefore it's used to check which way address
-			should be formatted
-			*/
-			if (results.address_components) { 
+			//address_components is only returned through details seach
+			if (results.address_components) {
 				location = results.formatted_address;
-			} else {
+			} else if (results.formatted_address && results.formatted_address.indexOf(',') != -1) {
+				var city = results.name;
+				location = results.formatted_address.split(',');
+				location = city + ', ' + location[1];
+			//searching country name only does not return formatted address
+			} else if (results.formatted_address && results.formatted_address.indexOf(',') == -1) {
 				location = results.name + ', ' + results.formatted_address;
+			//some results only include country in formatted address
+			} else if (results.formatted_address) {
+				location = (results.formatted_address);
+			} else {
+				location = results.name;
 			}
 
 			var request = {
