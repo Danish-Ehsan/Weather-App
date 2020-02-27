@@ -9,6 +9,7 @@ html, body {
 	letter-spacing: 0.6px;
 	color: #b4b6b6;
 	background-color: #373638;
+	box-sizing: border-box;
 }
 
 /*
@@ -355,6 +356,7 @@ input::selection {
 	border-bottom: 2px solid #29292a;
 	color: #959696;
 	padding: 8px 0;
+	cursor: pointer;
 }
 
 #searchList a:hover {
@@ -383,7 +385,7 @@ input::selection {
 #moreInfoButton {
 	font-size: 11pt;
 	position: absolute;
-	color: #606060;
+	color: #808080;
 	left: 50%;
 	bottom: -25px;
 	transform: translateX(-50%);
@@ -418,6 +420,10 @@ input::selection {
 
 @media screen and (max-width: 475px) {
 
+	html, body {
+		background-color: #29292a;
+	}
+
 	#centerBox {
 		width: 100%;
 	}
@@ -426,15 +432,9 @@ input::selection {
 		width: 100%;
 	}
 
-}
-
-@media screen and (max-height: 735px) {
-
-	#container {
-		top: 10%;
-		-webkit-transform: translateY(0%);
-		-ms-transform: translateY(0%);
-		transform: translateY(0%);
+	#moreInfoButton {
+		bottom: auto;
+		width: 100%;
 	}
 
 }

@@ -58,7 +58,7 @@
 
 
 	//Ajax request
-	function getWeather(lng, lat, location, utcOffset) {
+	function getWeather(lng, lat, location) {
 		var xhr = new XMLHttpRequest();
 
 		xhr.onload = function() {
@@ -66,6 +66,7 @@
 				var responseString = xhr.responseText;
 				var responseObject = JSON.parse(responseString);
 
+				var utcOffset = responseObject.timezone / 60;
 				var cityName = responseObject.name + ', ' + responseObject.sys.country;
 				var outlook = responseObject.weather[0].description;
 				var kelvin = responseObject.main.temp;
@@ -78,16 +79,17 @@
 				var sunriseUTC = formatUnixTime(responseObject.sys.sunrise);
 				var sunsetUTC = formatUnixTime(responseObject.sys.sunset);
 
-				//var formatSunrise = formatTime(utcOffset, sunriseUTC.hours, sunriseUTC.minutes);
-				//var sunriseTime = formatSunrise.hours + ':' + formatSunrise.minutes;
-				//var formatSunset = formatTime(utcOffset, sunsetUTC.hours, sunsetUTC.minutes);
-				//var sunsetTime = formatSunset.hours + ':' + formatSunset.minutes;
+				var formatSunrise = formatTime(utcOffset, sunriseUTC.hours, sunriseUTC.minutes);
+				var sunriseTime = formatSunrise.hours + ':' + formatSunrise.minutes;
+				var formatSunset = formatTime(utcOffset, sunsetUTC.hours, sunsetUTC.minutes);
+				var sunsetTime = formatSunset.hours + ':' + formatSunset.minutes;
 
 				var windDeg = Math.floor(responseObject.wind.deg);
 				var windSpeed = Math.floor(responseObject.wind.speed * 2.23694) + " MPH";
 				var cloudPercent = responseObject.clouds.all + '%';
 				var humidityPercent = responseObject.main.humidity + '%';
 
+				updateClock(utcOffset, true);
 				animate(forecast, outlook);
 				animate(weatherIcon, imageLink);
 				celsiusMode ? animate(temp, celsius) : animate(temp, fahrenheit);
@@ -117,7 +119,7 @@
 		}
 
 		var requestLink = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lng + '&APPID=' + apiKey;
-
+		console.log('requestlink: ' + requestLink);
 		xhr.open('GET', requestLink, true);
 		xhr.send(null);
 
