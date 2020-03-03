@@ -110,7 +110,7 @@ text lightgrey: #959696;
 	width: 35px;
 	height: 25px;
 	position: relative;
-	bottom: 29px;
+	bottom: 22px;
 	left: 8px;
 	font-size: 20pt;
 	font-weight: 200;
@@ -145,6 +145,7 @@ text lightgrey: #959696;
 
 #windInfo {
 	height: 20px;
+	transform: translateY(-56%);
 }
 
 #arrowCont {
@@ -153,6 +154,7 @@ text lightgrey: #959696;
 	margin-right: 7px;
 	display: inline-block;
 	vertical-align: top;
+	transform: translateY(-52%);
 }
 
 #arrowCont img {
@@ -167,6 +169,10 @@ text lightgrey: #959696;
 	width: 60px;
 	height: 25px;
 	vertical-align: middle;
+}
+
+#windSpeedCont {
+    transform: translateY(-52%);
 }
 
 .srTimeCont, .percentCont {
@@ -293,7 +299,7 @@ text lightgrey: #959696;
 	margin: 0 auto;
 	top: 50%;
 	transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
+	-webkit-transform: translateY(-64%);
 }
 
 #searchInput {
@@ -322,6 +328,7 @@ input::selection {
 	height: 20px;
 	border: none;
 	cursor: pointer;
+	transform: translateY(-50%);
 }
 
 #gpsButton {
@@ -399,12 +406,14 @@ input::selection {
 	color: #151515;
 	font-size: 18pt;
 	position: relative;
-	right: 2px;
-	top: 4px;
+	right: 0px;
+	top: 6px;
 }
 
 #moreInfoButton .open {
 	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+	right: 2px;
 }
 
 .moreInfo {
@@ -416,6 +425,10 @@ input::selection {
 	height: 0;
 	margin-top: -2px;
 	margin-bottom: -2px;
+}
+
+.extraContainer {
+	transform: translateY(-56%);
 }
 
 @media screen and (max-width: 475px) {
