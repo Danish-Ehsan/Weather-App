@@ -7,11 +7,6 @@
 	var errors = document.getElementById('errors');                    
 	var srchInput;
 
-	//var apiKey = '1psTVOFfJuX2l30e9QyUWdZ6uqGhT3EI';
-	var map = new google.maps.Map(document.createElement('div'));
-	var service = new google.maps.places.PlacesService(map);
-	var serviceAC = new google.maps.places.AutocompleteService();
-
 	var lat, lng, placeId, location;
 
 	var autoCompleteTimer;
