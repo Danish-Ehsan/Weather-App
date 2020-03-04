@@ -33,6 +33,7 @@
 			clearTimeout(autoCompleteTimer);
 			searchCity(srchBox.value);
 			srchList.style.display = 'none';
+			srchBox.blur();
 		} else if (key == 40) {
 			clearTimeout(autoCompleteTimer);
 			iSrchList = 0;
