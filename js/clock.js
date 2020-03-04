@@ -163,7 +163,7 @@
 			setTimeout(function() {
 				//following lines use .length for index to account for multiple searches while still animating
 				element.children[(element.children.length - 2)].setAttribute('style', 'top: 100%; transform: translate(-50%, 0); opacity: 0.2;');
-				element.children[(element.children.length - 1)].setAttribute('style', 'top: 50%; transform: translate(-50%, -50%); opacity: 1;');
+				element.children[(element.children.length - 1)].setAttribute('style', 'top: 50%; transform: translate(-50%, -40%); opacity: 1;');
 				setTimeout(function() {
 					//debugger;
 					element.removeChild(element.children[0]);
@@ -171,71 +171,6 @@
 			}, delay);
 		}
 	}
-
-/*
-		if (utcOffset) {
-			var offsetHrs = Math.floor(utcOffset / 60);
-			var offsetMins = utcOffset % 60;
-
-			hours += offsetHrs;
-			minutes += offsetMins;
-
-			if (hours < 0) {
-				hours += 24;
-				if (date === 1) {	//change to previous month and check number of days prev month
-					newMonth = month - 1;		
-					var dayTotal = daysInMonth(month, year);
-					date = dayTotal;
-					month === 0 ? month = 11 : month -= 1;
-				} else {
-					date -= 1;
-				}
-			} else if (hours > 24) {
-				hours -= 24;
-				if (date > 27) {	//check if month should change
-					var dayTotal = daysInMonth((month + 1), year);
-
-					if ((date + 1) > dayTotal) {
-						date = 1;
-						month === 11 ? month = 0 : month += 1;
-					} else {
-						date += 1;
-					}
-				} else {
-					date += 1;
-				}
-			}
-
-			if (minutes < 0) {
-				minutes += 60;
-			} else if (minutes > 60) {
-				minutes -= 60;
-			}
-		}
-
-
-		(function formatTime() {
-			ampm = hours >= 12 ? 'pm' : 'am';
-
-			//convert to 12hr clock
-			if (hours > 12) {
-				hours -= 12;
-			} 
-
-			hours = hours ? hours : 12;		//change 0 hour to 12
-			hours = hours < 10 ? '0' + hours : hours;
-
-			minutes = minutes < 10 ? '0' + minutes : minutes;
-			
-			month = monthNames[month];
-
-			fullDate = month + ' ' + date + ', ' + year;
-		}());
-
-
-		var time = hours.toString() + minutes.toString();
-		//debugger;
-*/
 
 //}());
 
